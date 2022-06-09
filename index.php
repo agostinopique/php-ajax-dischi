@@ -1,5 +1,8 @@
 <?php
 
+    include __DIR__.'/assets/database/json.php';
+
+    // var_dump($dischi);
 
 
 ?>
@@ -23,7 +26,7 @@
     <title>Dischi PHP</title>
 </head>
 <body>
-    <header>
+    <header class="header">
         <div class="header-container">
             <div class="spotify-logo">
                 <a href="#">
@@ -35,16 +38,20 @@
 
     <main>
     <div class="disc-container">
+        <?php foreach($dischi as $disco): ?>
         <div class="card-container">
             <div class="disc-img">
-                <img src="AlbumCard.poster" alt="AlbumCard.title">
+                <img 
+                src="<?php echo $disco["poster"]?>" 
+                alt="<?php echo $disco["title"] ?>">
             </div>
             <div class="disc-text">
-                <h4>AlbumCard.title</h4>
-                <span class="album-title">AlbumCard.author</span>
-                <span>AlbumCard.year</span>
+                <h4><?php echo $disco["title"]?></h4>
+                <span class="album-title"><?php echo $disco["author"]?></span>
+                <span><?php echo $disco["year"]?></span>
             </div>
         </div>
+        <?php endforeach; ?>
     </div>
 
     </main>
