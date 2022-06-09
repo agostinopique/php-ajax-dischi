@@ -26,6 +26,25 @@
   filter: invert(56%) sepia(99%) saturate(364%) hue-rotate(83deg) brightness(92%) contrast(83%);
 }
 
+/* SELECT */
+.select-container {
+  display: flex;
+}
+
+#genre,
+#author {
+  padding: 10px 25px;
+}
+#genre option,
+#author option {
+  background-color: white;
+}
+
+#author {
+  margin-left: 5px;
+}
+
+/* /SELECT */
 /* /HEADER */
 /* MAIN */
 main {

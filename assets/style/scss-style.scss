@@ -27,6 +27,25 @@
     
 }
 
+/* SELECT */
+
+.select-container{
+    display: flex;
+}
+#genre,
+#author{
+    padding: 10px 25px;
+    option{
+        background-color: white;
+    }
+}
+
+#author{
+    margin-left: 5px;
+}
+
+/* /SELECT */
+
 /* /HEADER */
 
 /* MAIN */

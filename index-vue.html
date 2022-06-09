@@ -25,6 +25,39 @@
                         <img src="./assets/img/logo-small.svg" alt="spotify-logo">
                     </a>
                 </div>
+                <div class="select-container">
+            
+                    <div class="genre-select">
+                
+                        <select 
+                        v-model="apiParams.genre"
+                        @change="getSearchApi()"
+                        name="genre" id="genre">
+                            
+                            <option value="default" selected>Choose a Genre</option>
+                            <option 
+                                v-for="(genre, index) in genreArr"
+                                :key="`genre-${index}`"
+                                :value="genre">{{genre}}</option>
+                        </select>
+                
+                    </div>
+                    <div class="genre-select">
+                
+                        <select 
+                        v-model="apiParams.author"
+                        @change="getSearchApi()"
+                        name="genre" id="author">
+                            
+                            <option value="default" selected>Choose an Author</option>
+                            <option 
+                                v-for="(author, index) in artistArr"
+                                :key="`album-${index}`"
+                                :value="author">{{author}}</option>
+                        </select>
+                
+                    </div>
+                </div>
             </div>
         </header>
     
