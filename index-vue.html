@@ -14,7 +14,7 @@
     <!-- STYLE -->
     <link rel="stylesheet" href="./assets/style/style.css">
 
-    <title>Dischi PHP</title>
+    <title>Dischi PHP & vue</title>
 </head>
 <body>
     <div id="app">
@@ -31,7 +31,7 @@
                 
                         <select 
                         v-model="apiParams.genre"
-                        @change="getSearchApi()"
+                        @change="getApi()"
                         name="genre" id="genre">
                             
                             <option value="default" selected>Choose a Genre</option>
@@ -46,7 +46,7 @@
                 
                         <select 
                         v-model="apiParams.author"
-                        @change="getSearchApi()"
+                        @change="getApi()"
                         name="genre" id="author">
                             
                             <option value="default" selected>Choose an Author</option>
@@ -64,7 +64,8 @@
         <main>
             <div class="disc-container">
                 
-                <div v-for="(disc, index) in discArr"
+                <div 
+                v-for="(disc, index) in discArr"
                 :key="index"    
                 class="card-container">
                     <div class="disc-img">
@@ -78,7 +79,6 @@
                         <span>{{disc.year}}</span>
                     </div>
                 </div>
-            
             </div>
     
         </main>

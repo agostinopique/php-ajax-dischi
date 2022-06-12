@@ -23,37 +23,30 @@ const app = new Vue ({
                 params: this.apiParams,
             }) 
             .then((res) => {
-                this.discArr = res.data; 
+                this.discArr = res.data.dischiFiltrati;
+                this.genreArr = res.data.genreArr;
+                this.artistArr = res.data.artistArr;
 
-                this.discArr.forEach(album => {
-                    if(!this.genreArr.includes(album.genre)){
-                        this.genreArr.push(album.genre)
-                    }
-                });
-
-                this.discArr.forEach(album => {
-                    if(!this.artistArr.includes(album.author)){
-                        this.artistArr.push(album.author)
-                    }
-                })
-                console.log(this.artistArr);
+                console.log(this.discArr);
                 console.log(this.genreArr);
+                console.log(this.artistArr);
+
+                // FILTRI SPOSTATI NELL'API
+                // this.discArr.forEach(album => {
+                //     if(!this.genreArr.includes(album.genre)){
+                //         this.genreArr.push(album.genre)
+                //     }
+                // });
+
+                // this.discArr.forEach(album => {
+                //     if(!this.artistArr.includes(album.author)){
+                //         this.artistArr.push(album.author)
+                //     }
+                // })s
             })
             .catch (err =>{
-                console.log('ERROR', err)
+                console.log('ERRORE', err)
             });
-        },
-
-        getSearchApi(){
-            axios.get(this.apiURL, {
-                params: this.apiParams,
-            })  
-            .then((res) => {
-                this.discArr = res.data;
-                // console.log(res);
-            })
-            console.log(this.apiParams.genre)
-            console.log(this.apiParams.author)
         }
     }
 })
